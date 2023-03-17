@@ -77,3 +77,8 @@ function Calcular() {
       
     
     }
+    function Limpar(s1, s2, s3){
+		document.getElementById(s1).value = "";
+		document.getElementById(s2).value = "";
+        document.getElementById(s3).value = "";
+    }
