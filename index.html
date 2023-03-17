@@ -7,83 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contas financeiras</title>
 </head>
+<h1>FortunatoContas.com.br</h1>
+<p>Coloque o salário, seu número da chamada e número de horas extras para obter as respostas!</p>
+
 
 <body>
-    <script>
-      alert('Bem-vindo ao FortunatoContas, aqui, a cada aula, o site irá atualizar para facilitar a vossa vida! Então, pra começar, coloca o valor do salário do povo aí. ');
-var s1 = parseInt(prompt('O salário?'));
-var s2 = parseInt(prompt('Seu número?'));
-var s3 = parseInt(prompt('Número de Horas extras por dia sem o seu número'))
-var hextrabase = s3 + s2
-var salario = s1 + s2;//Salário  A
-var hora = salario/220;//Hora normal  B
-var horaextra = hora/2;//Adicional de 50%  C
-var hes = horaextra+hora//hora extra+hora  D
-var hem = hes*hextrabase;//Horas extras por mês
-var valorhe = salario + hem;//Salário+Hora extra
-var inss = 0; //inss
-if (valorhe <= 1212) {
-    var inss = valorhe*0.075
+    <script src="calculadorafc.js"></script>
+    <input type="text" size="10" id="s1" placeholder="Salário" >
+    <input type="text" size="10" id="s2" placeholder="Número">
+    <input type="text" size="10" id="s3" placeholder="Hora extra"><br>
+    <input type="button" onclick="Calcular('s1', 's2')" value="Calcular">
+	<input type="button" onclick="Limpar('s1', 's2', 's3')" value="Limpar">
 
-}
-else if (valorhe <= 2427.35) {
 
-    var inss = (valorhe-1212)*0.09+90.9;
-}
-else if (valorhe <= 3641.03) {
-    var inss = (valorhe-2427.35)*0.12+109.38;
-}
-else if (valorhe <= 7087.22) {
-    var inss = (valorhe-3641.03)*0.14+145.64;
-}
-else if (valorhe >= 7087.22) {
-    var inss = 828.39;
-}
-var baseirrf = valorhe - inss//base pro imposto de renda
-var irrf = 0 //imposto de renda
-if (baseirrf <= 1903.98) {
-    var irrf = 0
-}
-else if (baseirrf <= 2826.65) {
-    var irrf = (baseirrf*0.075)-142.8
-}
-else if (baseirrf <= 3751.05) {
-    var irrf = baseirrf*0.15-354.8
-}
-else if (baseirrf <= 4664.68) {
-    var irrf = baseirrf*0.225-646.13
-}
-else if (baseirrf >= 4664.48) {
-    var irrf = baseirrf*0.3750-69.36
-}
+<p id="saidasalario">Salário:</p> 
+<p id="saidahora">Hora normal:</p>
+<p id="saidahoraextra">Adicional de 50%:</p>
+<p id="saidahes">Hora extra:</p>
+<p id="saidahextrabase">Horas extras por dia:</p>
+<p id="saidahem">Horas extras por mês:</p>
+<p id="saidavalorhe">Hora extra + Salário:</p>
+<p id="saidainss">INSS:</p>
+<p id="saidabaseirrf">Base p/ Imposto de renda:</p>
+<p id="saidairrf">Imposto de renda:</p>
+<p id="saidasalariol">Salário líquido:</p>
+<p id="saidainssp">INSS Patronal:</p>
+<p id="saidafgts">FGTS:</p>
+<p id="saidacustoemp">Custo empresa:</p>
 
-var salariol = baseirrf - irrf; //salário líquido
-var inssp = valorhe*0.278; //inss patronal
-var fgts = valorhe*0.08 //FGTS
-var custoemp = valorhe+inssp+fgts //custo da empresa para manter o funcionário
+<h1>OBSERVAÇÃO!</h1><br>
+Utilize o arredondamento até 2 casas para fazer a folha!
 
-console.log(salario, 'Salário');//s1+s2
-console.log(hora, 'Hora normal');//somar/220
-console.log(horaextra, 'Adicional de 50%')//hora+50%
-console.log(hes, 'Hora extra')
-console.log(hextrabase, 'Horas extras por dia')
-console.log(hem, 'Horas extras por mês')
-console.log(valorhe, 'Hora extra + Salário');
-console.log(inss, 'INSS')
-console.log(baseirrf,'Base p/ IRRF')
-console.log(irrf,'Imposto de renda')
-console.log(salariol, 'Salário líquido')
-console.log(inssp, 'INSS Patronal')
-console.log(fgts, 'FGTS')
-console.log(custoemp, 'Custo Empresa')
-    </script>
-    <pre>
-        <code>
-          <span style="color: rgb(0, 0, 0)">os resultados são feitos no console, pra acessar ele aperta com botão direito na página, clica em inspecionar elemento e vai em console, lá estão os resultados.</script></span>
-          <span style="color: rgb(0, 0, 0)">ATUALMENTE O SITE É E X C L U S I V O PARA PCS, SE ESTIVER NO CELULAR ABRE O SITE NO PC VIU SEU BOBÃO!!!</script></span>
-        </code>
-      </pre>
-      <p>tô ainda programando o site pra ele ser acessível em dispositiveis móveis, em breve vai vir</p>
+
 
 
 
