@@ -105,27 +105,52 @@ function Calcular() {
     }
     var Q = J*12.33
     var R = Q - P;
+var aa =  parseFloat(A.toFixed(6));
+var bb =  parseFloat(B.toFixed(6));
+var cc =  parseFloat(C.toFixed(6));
+var dd =  parseFloat(D.toFixed(6));
+var ee =  parseFloat(E.toFixed(6));
+var ff =  parseFloat(F.toFixed(6));
+var gg =  parseFloat(G.toFixed(6));
+var hh =  parseFloat(H.toFixed(6));
+var ii =  parseFloat(I.toFixed(6));
+var jj =  parseFloat(J.toFixed(6));
+var kk =  parseFloat(K.toFixed(6));
+var ll =  parseFloat(L.toFixed(6));
+var mm =  parseFloat(M.toFixed(6));
+var nn =  parseFloat(N.toFixed(6));
+var oo =  parseFloat(O.toFixed(6));
+var pp =  parseFloat(P.toFixed(6));
+var qq =  parseFloat(Q.toFixed(6));
+var rr =  parseFloat(R.toFixed(6));
 
 
-    
-    document.getElementById("saidaa").innerHTML = A;
-    document.getElementById('saidab').innerHTML = B
-    document.getElementById("saidac").innerHTML = C;
-    document.getElementById("saidad").innerHTML = D;
-    document.getElementById("saidae").innerHTML = E;
-    document.getElementById("saidaf").innerHTML = F;
-    document.getElementById("saidag").innerHTML = G;
-    document.getElementById("saidah").innerHTML = H;
-    document.getElementById("saidai").innerHTML = I;
-    document.getElementById("saidaj").innerHTML = J
-    document.getElementById("saidak").innerHTML = K;
-    document.getElementById("saidal").innerHTML = L
-    document.getElementById("saidam").innerHTML = M;
-    document.getElementById("saidan").innerHTML = N;
-    document.getElementById("saidao").innerHTML = O;
-    document.getElementById("saidap").innerHTML = P;
-    document.getElementById("saidaq").innerHTML = Q;
-    document.getElementById("saidar").innerHTML = R;
+
+
+
+
+
+
+
+
+    document.getElementById("saidaa").innerHTML = aa;
+    document.getElementById('saidab').innerHTML = bb
+    document.getElementById("saidac").innerHTML = cc;
+    document.getElementById("saidad").innerHTML = dd;
+    document.getElementById("saidae").innerHTML = ee;
+    document.getElementById("saidaf").innerHTML = ff;
+    document.getElementById("saidag").innerHTML = gg;
+    document.getElementById("saidah").innerHTML = hh;
+    document.getElementById("saidai").innerHTML = ii;
+    document.getElementById("saidaj").innerHTML = jj
+    document.getElementById("saidak").innerHTML = kk;
+    document.getElementById("saidal").innerHTML = ll;
+    document.getElementById("saidam").innerHTML = mm;
+    document.getElementById("saidan").innerHTML = nn;
+    document.getElementById("saidao").innerHTML = oo;
+    document.getElementById("saidap").innerHTML = pp;
+    document.getElementById("saidaq").innerHTML = qq;
+    document.getElementById("saidar").innerHTML = rr;
 
       
     
