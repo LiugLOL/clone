@@ -42,7 +42,7 @@ function Calcular() {
         var J = 0
     }
     else if (I <= 2826.65) {
-        var J = (J*0.075)-142.8
+        var J = I*0.075-142.8
     }
     else if (I <= 3751.05) {
         var J = I*0.15-354.8
@@ -108,32 +108,33 @@ function Calcular() {
 
 
     
-    document.getElementById("saidasalario").innerHTML = "Salário:   " + A;
-    document.getElementById('saidahora').innerHTML = "Hora normal:   "+ B;
-    document.getElementById("saidahoraextra").innerHTML = "Adicional de 50%:   "+ C;
-    document.getElementById("saidahes").innerHTML = "Hora extra:   " + D;
-    document.getElementById("saidahextrabase").innerHTML = "Horas extras por dia:   " + E;
-    document.getElementById("saidahem").innerHTML = "Horas extras por mês:   " + F;
-    document.getElementById("saidavalorhe").innerHTML = "Hora extra + Salário:   " + G;
-    document.getElementById("saidainss").innerHTML = "INSS:   " + H;
-    document.getElementById("saidabaseirrf").innerHTML = "Base p/ Imposto de Renda:   " + I;
-    document.getElementById("saidairrf").innerHTML = "Imposto de Renda:   " + J;
-    document.getElementById("saidasalariol").innerHTML = "Salário líquido:   " + K;
-    document.getElementById("saidainssp").innerHTML = "Renda Total/ano:   " + L;
-    document.getElementById("saidafgts").innerHTML = "Contr.Prev.INSS/ano:   " + M;
-    document.getElementById("saidacustoemp").innerHTML = "Desconto Simpl.:  " + N;
-    document.getElementById("saidarendatot").innerHTML = "Base Cálculo:  " + O;
-    document.getElementById("saidadescsim").innerHTML = "Imp. Devido:  " + P;
-    document.getElementById("saidabaseira").innerHTML = "IRRF:  " + Q;
-    document.getElementById("saidaimpdev").innerHTML = "IR Restante(PG):  " + R;
+    document.getElementById("saidaa").innerHTML = A;
+    document.getElementById('saidab').innerHTML = B
+    document.getElementById("saidac").innerHTML = C;
+    document.getElementById("saidad").innerHTML = D;
+    document.getElementById("saidae").innerHTML = E;
+    document.getElementById("saidaf").innerHTML = F;
+    document.getElementById("saidag").innerHTML = G;
+    document.getElementById("saidah").innerHTML = H;
+    document.getElementById("saidai").innerHTML = I;
+    document.getElementById("saidaj").innerHTML = J
+    document.getElementById("saidak").innerHTML = K;
+    document.getElementById("saidal").innerHTML = L
+    document.getElementById("saidam").innerHTML = M;
+    document.getElementById("saidan").innerHTML = N;
+    document.getElementById("saidao").innerHTML = O;
+    document.getElementById("saidap").innerHTML = P;
+    document.getElementById("saidaq").innerHTML = Q;
+    document.getElementById("saidar").innerHTML = R;
 
       
     
     }
-    function Limpar(s1, s2, s3){
+    function Limpar(s1){
 		document.getElementById(s1).value = "";
-		document.getElementById(s2).value = "";
-        document.getElementById(s3).value = "";
-    
+		
     }
-
+  
+  function fechar(){
+        window.close();
+    }
