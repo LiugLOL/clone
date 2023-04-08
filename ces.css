@@ -80,6 +80,7 @@ legend {
     font-family: "Kamit", sans-serif;
     font-size: small;
     color: white;
+    white-space: nowrap;
 }
 .tab {
     color: grey;
