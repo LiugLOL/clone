@@ -121,11 +121,12 @@ h2 {
     color: white;
 }
 .haha {
-    width: 85%;
+    width: 90%;
     padding: 10px 10px;
     background-color: #050513;
     margin: 0 auto;
     border-radius: 40px;
+    min-width: 1000px;
 }
 .tabel {
         margin-left: -65px;
