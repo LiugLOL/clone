@@ -150,6 +150,7 @@ h2 {
 }
 fieldset {
     border-radius: 30px;
+    min-width: 95%;
 }
 .woww {
     font-family: "Kanit", sans-serif;
