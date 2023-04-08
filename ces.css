@@ -48,6 +48,7 @@ h1, input, .PE {
 .site, .tab {
     font-family: "Kanit", sans-serif;
     padding: 0 60px;
+    white-space: nowrap;
 
 }
 
@@ -127,14 +128,18 @@ h2 {
     margin: 0 auto;
     border-radius: 40px;
     min-width: 500px;
+    white-space: nowrap;
 }
 .tabel {
         margin-left: -65px;
 
     font-size: medium;
+    white-space: nowrap;
+
 }
 .a {
   text-decoration: none;
+  white-space: nowrap;
 }
 .a {
     color: grey;
