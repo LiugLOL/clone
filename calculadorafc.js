@@ -54,26 +54,26 @@ function Calcular() {
         var J = 0
     }
     else if (I <= 2826.65, I>=1903.98) {
-        var part1 = I*0.075;
-        var J = part1-142.80;
+        var parte1 = I*0.075;
+        var J = parte1-142.80;
         
 
     }
     else if (I <= 3751.05) {
-        var part1 = I*0.15;
-        var J = part1-354.80;
+        var parte1 = I*0.15;
+        var J = parte1-354.80;
         
         
 
     }
     else if (I <= 4664.68) {
-        var part1 = I*0.225;
-        var J = part1-646.13;
+        var parte1 = I*0.225;
+        var J = parte1-646.13;
         
     }
     else if (I >= 4664.48) {
-        var part1 = I*0.2750;
-        var J = part1-869.36;
+        var parte1 = I*0.2750;
+        var J = parte1-869.36;
 
     }
     
@@ -95,26 +95,26 @@ function Calcular() {
            
     }
     else if (O<=33191.80) {
-        var parte1 = O*0.075;
-        var P = parte1-1716;
+        var partee1 = O*0.075;
+        var P = partee1-1716;
         
 
 
     }
     else if (O<=45012.60) {
-        var parte1 = O*0.15;
-        var P = parte1-4257;
+        var partee1 = O*0.15;
+        var P = partee1-4257;
 
        var P = O*0.15 -4257.57
     }
     else if (O<=55976.16) {
-        var parte1 = O*0.225
-        var P = parte1-7633.51
+        var partee1 = O*0.225
+        var P = partee1-7633.51
        
     }
     else if (O>55976.16) {
-        var parte1= O*0.275
-       var P = O - 10432.32
+        var partee1= O*0.275
+       var P = partee1 - 10432.32
     }
     var Q = J*12.33
     var R = Q - P;
