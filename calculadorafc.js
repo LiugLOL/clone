@@ -20,20 +20,32 @@ function Calcular() {
     var G = A + F;//Salário+Hora extra
     var H = 0; //inss
     if (G <= 1212) {
-        var H = G*0.075
+        var part1 = G*0.075;
+        var H = part1+90.90;
+
     
     }
-    else if (G <= 2427.35) {
+    else if (G <= 2427.35, G >=1212) {
     
-        var H = (G -1212)*0.09 + 90.9;
+        var part1 = G -1212;
+        var part2 = part1*0.09;
+        var H = part2+109.38;
     }
-    else if (G <= 3641.03) {
-        var H = (G-2427.35)*0.12 + 109.38;
+    else if (G <= 3641.03, G>=2427.35) {
+        var part1 = G-2427.35;
+        var part2 = part1*0.12;
+        var H = part2+145.64;
     }
-    else if (G <= 7087.22) {
-        var H = (G-3641.03)*0.14 + 145.64;
+    else if (G <= 7087.22, G>=3641.03) {
+        var part1 = G -3641.03;
+        var part2 = part1*0.14;
+        var H = part2+482.47;
+        
+        
     }
     else if (G  >= 7087.22) {
+ 
+        
         var H = 828.39;
     }
     var I = G-H//base pro imposto de renda
@@ -41,17 +53,28 @@ function Calcular() {
     if (I <= 1903.98) {
         var J = 0
     }
-    else if (I <= 2826.65) {
-        var J = I*0.075-142.8
+    else if (I <= 2826.65, I>=1903.98) {
+        var part1 = I*0.075;
+        var J = part1-142.80;
+        
+
     }
     else if (I <= 3751.05) {
-        var J = I*0.15-354.8
+        var part1 = I*0.15;
+        var J = part1-354.80;
+        
+        
+
     }
     else if (I <= 4664.68) {
-        var J = I*0.225-646.13
+        var part1 = I*0.225;
+        var J = part1-646.13;
+        
     }
     else if (I >= 4664.48) {
-        var J = I*0.3750-69.36
+        var part1 = I*0.2750;
+        var J = part1-869.36;
+
     }
     
     var K = I - J; //salário líquido
@@ -59,30 +82,10 @@ function Calcular() {
     var L =  I*12.33;
     var M = H*12.33
     var N = M*0.2;
-    if (N>16754.34) {
+    if (N>=16754.34) {
         N = 16754.34
     }
-   /* if (L<16754.34)  {
-        var N = L*0.2
-
-    }    
-    else if (L<=22847.76) {
-       var N= 0
-           
-    }
-    else if (L<=33191.80) {
-       var N = L*0.075-1716
-    }
-    else if (L<=45012.60) {
-       var N = L*0.15 - 4257.57
-    }
-    else if (L<=55976.16) {
-       var N = L*0.225 - 7633.51
-    }
-    else if (L>55976.16) {
-       var N = L*0.275 - 10432.32
-    }
-    */
+   
     var O = L-N;//BASEIRA
     var P =  0;//IMPDEV
     
@@ -92,37 +95,47 @@ function Calcular() {
            
     }
     else if (O<=33191.80) {
-       var P = O*0.075-1716
+        var parte1 = O*0.075;
+        var P = parte1-1716;
+        
+
+
     }
     else if (O<=45012.60) {
+        var parte1 = O*0.15;
+        var P = parte1-4257;
+
        var P = O*0.15 -4257.57
     }
     else if (O<=55976.16) {
-       var P = O*0.225 - 7633.51
+        var parte1 = O*0.225
+        var P = parte1-7633.51
+       
     }
     else if (O>55976.16) {
-       var P = O*0.275 - 10432.32
+        var parte1= O*0.275
+       var P = O - 10432.32
     }
     var Q = J*12.33
     var R = Q - P;
-var aa =  parseFloat(A.toFixed(6));
-var bb =  parseFloat(B.toFixed(6));
-var cc =  parseFloat(C.toFixed(6));
-var dd =  parseFloat(D.toFixed(6));
-var ee =  parseFloat(E.toFixed(6));
-var ff =  parseFloat(F.toFixed(6));
-var gg =  parseFloat(G.toFixed(6));
-var hh =  parseFloat(H.toFixed(6));
-var ii =  parseFloat(I.toFixed(6));
-var jj =  parseFloat(J.toFixed(6));
-var kk =  parseFloat(K.toFixed(6));
-var ll =  parseFloat(L.toFixed(6));
-var mm =  parseFloat(M.toFixed(6));
-var nn =  parseFloat(N.toFixed(6));
-var oo =  parseFloat(O.toFixed(6));
-var pp =  parseFloat(P.toFixed(6));
-var qq =  parseFloat(Q.toFixed(6));
-var rr =  parseFloat(R.toFixed(6));
+var aa =  parseFloat(A.toFixed(4));
+var bb =  parseFloat(B.toFixed(4));
+var cc =  parseFloat(C.toFixed(4));
+var dd =  parseFloat(D.toFixed(4));
+var ee =  parseFloat(E.toFixed(4));
+var ff =  parseFloat(F.toFixed(4));
+var gg =  parseFloat(G.toFixed(4));
+var hh =  parseFloat(H.toFixed(4));
+var ii =  parseFloat(I.toFixed(4));
+var jj =  parseFloat(J.toFixed(4));
+var kk =  parseFloat(K.toFixed(4));
+var ll =  parseFloat(L.toFixed(4));
+var mm =  parseFloat(M.toFixed(4));
+var nn =  parseFloat(N.toFixed(4));
+var oo =  parseFloat(O.toFixed(4));
+var pp =  parseFloat(P.toFixed(4));
+var qq =  parseFloat(Q.toFixed(4));
+var rr =  parseFloat(R.toFixed(4));
 
 
 
