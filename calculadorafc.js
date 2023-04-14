@@ -4,9 +4,10 @@ function Calcular() {
     var s1 = parseFloat(document.getElementById("s1").value); 
     var s2 = parseFloat(document.getElementById("s2").value);
     var s3 = parseFloat(document.getElementById("s3").value);
+    var s4 = parseFloat(document.getElementById("s4").value);
     
 
-    if (isNaN(s1) || isNaN(s2) || isNaN(s3)) { 
+    if (isNaN(s1) || isNaN(s2) || isNaN(s3) || isNaN(s4)) { 
         alert("Preencha os campos corretamente!");
         return;
     }
@@ -48,32 +49,33 @@ function Calcular() {
         
         var H = 828.39;
     }
-    var I = G-H//base pro imposto de renda
+    var iii = s4*189.59 //USE VALORES INTEIRROS
+    var I = G-H-s4//base pro imposto de renda
     var J = 0 //imposto de renda
     if (I <= 1903.98) {
         var J = 0
     }
     else if (I <= 2826.65, I>=1903.98) {
-        var parte1 = I*0.075;
-        var J = parte1-142.80;
+        var part1 = I*0.075;
+        var J = part1-142.80;
         
 
     }
     else if (I <= 3751.05) {
-        var parte1 = I*0.15;
-        var J = parte1-354.80;
+        var part1 = I*0.15;
+        var J = part1-354.80;
         
         
 
     }
     else if (I <= 4664.68) {
-        var parte1 = I*0.225;
-        var J = parte1-646.13;
+        var part1 = I*0.225;
+        var J = part1-646.13;
         
     }
     else if (I >= 4664.48) {
-        var parte1 = I*0.2750;
-        var J = parte1-869.36;
+        var part1 = I*0.2750;
+        var J = part1-869.36;
 
     }
     
@@ -95,29 +97,30 @@ function Calcular() {
            
     }
     else if (O<=33191.80) {
-        var partee1 = O*0.075;
-        var P = partee1-1716;
+        var parte1 = O*0.075;
+        var P = parte1-1716;
         
 
 
     }
     else if (O<=45012.60) {
-        var partee1 = O*0.15;
-        var P = partee1-4257;
+        var parte1 = O*0.15;
+        var P = parte1-4257;
 
        var P = O*0.15 -4257.57
     }
     else if (O<=55976.16) {
-        var partee1 = O*0.225
-        var P = partee1-7633.51
+        var parte1 = O*0.225
+        var P = parte1-7633.51
        
     }
     else if (O>55976.16) {
-        var partee1= O*0.275
-       var P = partee1 - 10432.32
+        var parte1= O*0.275
+       var P = O - 10432.32
     }
     var Q = J*12.33
     var R = Q - P;
+   
 var aa =  parseFloat(A.toFixed(4));
 var bb =  parseFloat(B.toFixed(4));
 var cc =  parseFloat(C.toFixed(4));
@@ -154,6 +157,7 @@ var rr =  parseFloat(R.toFixed(4));
     document.getElementById("saidaf").innerHTML = ff;
     document.getElementById("saidag").innerHTML = gg;
     document.getElementById("saidah").innerHTML = hh;
+    document.getElementById("saidaii").innerHTML = iii
     document.getElementById("saidai").innerHTML = ii;
     document.getElementById("saidaj").innerHTML = jj
     document.getElementById("saidak").innerHTML = kk;
