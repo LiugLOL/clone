@@ -173,7 +173,7 @@ var jj =  parseFloat(J.toFixed(4));
       //irrf
       /*acabo*/
       /*agr é de maio, pula julho, e o resto do ano */
-      var aplus= A*0.05
+      var aplus= A*0.05+A
       var bplus=aplus/220
       var cplus=bplus/2
       var dplus=bplus+cplus
@@ -255,7 +255,7 @@ var jjplus =  parseFloat(jplus.toFixed(4));
 
 
       /*ferias */
-      var afer= A*0.05
+      var afer= A*0.05+A
       var bfer=afer/220
       var cfer=bfer/2
       var dfer=bfer+cfer
