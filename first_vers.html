@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contas financeiras</title>
+    <link rel="stylesheet" href="ces.css">
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit">
+
+<h1 class="aga1"><a  class="lin" href="https://www.fortunatocontas.com.br">FortunatoContas.com.br</a></h1>
+<p class="PE">Coloque o salário, seu número da chamada e número de horas extras para obter as respostas!</p>
+
+
+<body>
+    
+        
+    <script src="calculadorafc.js"></script>
+    <div class="bang">
+    <input type="text" size="15" id="s1" placeholder="Salário" class="buta">
+    <input type="text" size="15" id="s2" placeholder="Número" class="buta">
+    <input type="text" size="15" id="s3" placeholder="Hora extra" class="buta">
+    <input type="text" size="15" id="s4" placeholder="Dependentes" class="buta"><br><br>
+    <button type="button" onclick="Calcular('s1', 's2', 's3')" value="Calcular" class="boton cal">Calcular</button><button  type=button onclick="Limpar('s1')" value="Limpar" class="boton li">Limpar</button><br>
+     </div>
+     <div class="haha">
+     <div class="site">
+  <article class="di">
+    <p class="p">Salário:</p><p id="saidaa" class="re"></p>
+    <legend>O salário normal+ o seu número, vulgo A</legend>
+  </article>
+<article class="di">
+    <p class="p" >Hora normal:</p><p class="re" id="saidab"></p>
+    <LEGEnd> A hora dividida por 220, vulgo A/220 ou B</LEGEnd>
+</article>
+<article class="di">
+    <p class="p"> Adicional de 50%:</p><p class="re" id="saidac"></p>
+    <legend>Bx50%, vulgo C</legend>
+</article>
+<article class="di">
+    <p class="p"> Hora extra:</p><p class="re" id="saidad"></p>
+    <LEGend>A hora normal+a hora extra, vulgo B+C ou D</LEGend>
+    
+</article>
+<article class="di">
+    <p class="p" >Horas extras:</p><p class="re" id="saidae"></p>
+    <legend>As horas extras(horas mesmo)+O seu número, vulgo E</legend>
+</article>
+<article class="di">
+    <p class="p">Total Horas Extras/mês:</p><p class="re" id="saidaf"></p>
+    <LEGend>DxE, vulgo F</LEGend>
+</article>
+<article class="di">
+    <p class="p" >Hora extra + Salário:</p><p class="re" id="saidag"></p>
+    <legend>A+F, vulgo G</legend>
+</article>
+<article class="di">
+    <p class="p">INSS:</p><p class="re" id="saidah"></p>
+    <legend>G junto com a tabela do <a class="a" href="tabela.html" target="_blank">INSS</a>, vulgo H</legend>
+
+</article>
+<article class="di">
+<p class="p">Dependentes:</p><p class="re" id="saidaii"></p>
+<legend>Dependentes, 189.59xDEPENDENTES, vulgo I</legend>
+</article>
+<article class="di">
+    <p class="p" >Base p/ Imposto de renda:</p><p class="re" id="saidai"></p>
+    <legend>G-H, vulgo J</legend>
+</article>
+<article class="di">
+    <p class="p">Imposto de renda:</p><p class="re" id="saidaj"></p>
+    <LEGend>J junto com a tabela do <a class="a" href="tabela.html" target="_blank">IRRF mensal</a>, vulgo K</LEGend>
+</article>
+<article class="di">
+    <p class="p">Salário líquido:</p><p class="re" id="saidak"></p>
+    <legend>J-K, vulgo L</legend>
+</article>
+<article class="di">
+    <p class="p">Renda Total/ano:</p><p class="re" id="saidal"></p>
+    <LEGend>Jx12.33(salário do ano+ 1 terço das férias), vulgo M</LEGend>
+</article>
+<article class="di">
+    <P class="p">Contr.Prev.INSS/ano:<p><p class="re" id="saidam"></p>
+    <legend>Hx12.33, vulgo N</legend>
+        
+</article>
+<article class="di">
+    <p class="p">Desconto Simpl.:</p><p class="re" id="saidan"></p>
+    <legend>Nx20% se menor que 16 754.34, vulgo O</legend>
+</article>
+<article class="di">
+    <p class="p" >Base Cálculo:</p><p class="re" id="saidao"></p>
+    <legend>M-O, vulgo P</legend>
+</article>
+<article class="di">
+    <p class="p" >Imposto devido:</p><p class="re" id="saidap"></p>
+    <legend>P - Valor do  <a href="tabela.html" class="a" target="_blank">IRRF anual</a>, vulgo Q</legend>
+
+</article>
+<article class="di">
+    <p class="p" >IRRF:</p><p class="re" id="saidaq"></p>
+    <legend>Kx12.33, vulgo R</legend>
+</article>
+<article class="di">
+    <p class="p" >IR Restante(PG):</p><p class="re" id="saidar"></p>
+    <legend>Q-P,vulgo S/legend><br>
+</article>
+</div>
+</div>
+<br><br>
+
+<div class="haha">
+<h1 class="obs">OBSERVAÇÃO!</h1><br>
+<h4>Caso Imposto Devido dê <STROng>negativo</STROng>, o governo que te paga, e caso dê <strong>positivo</strong>, será vice-versa.</h4><br><br><br>
+
+
+
+<h4>dá uma ajudinha ae e faz um pix, é difícil fazer isso :emojichorando:</h4><br>
+<h5>pix:</h5><br><h5>(67) 9 9833-1806</h5>
+<br><br>
+</div><br><br>
+<p class="tabel"><a href="first_vers.html" target="_blank" class="tab">Site Antigo</a></p></legend>
+<p class="tabel"><a href="tabela.html" target="_blank" class="tab">Tabelas com IRRF, INSS, APENAS MENSAIS</p></legend>
+<br><br><br><br><br>
+
+
+
+
+</body>
+
+</html>
