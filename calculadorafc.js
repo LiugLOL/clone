@@ -259,7 +259,7 @@ var jjplus =  parseFloat(jplus.toFixed(4));
       var bfer=afer/220
       var cfer=bfer/2
       var dfer=bfer+cfer
-      var efer=E
+      var efer=0
       var ffer= dfer*efer
       var gfer=afer+ffer
       var hfer=0
@@ -373,8 +373,20 @@ document.getElementById("shfer").innerHTML = hhfer;
 document.getElementById("sdepfer").innerHTML = depfer;
 document.getElementById("sifer").innerHTML = iifer;
 document.getElementById("sjfer").innerHTML = jjfer
+//O K
+var kfer=ifer-jfer
+var K = I - J; //salário líquido
+var kplus= iplus-jplus
 
 
+//rend trib ano
+var rta=K*4+6*kplus+2*kfer
+
+//13 salario
+var dt=rta/12
+
+document.getElementById('srta').innerHTML= rta;
+document.getElementById('sdt').innerHTML= dt;
       
       
   }
