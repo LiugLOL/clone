@@ -255,7 +255,7 @@ var jjplus =  parseFloat(jplus.toFixed(4));
 
 
       /*ferias */
-      var afer= A*0.05+A
+      var afer= A*0.33+A
       var bfer=afer/220
       var cfer=bfer/2
       var dfer=bfer+cfer
