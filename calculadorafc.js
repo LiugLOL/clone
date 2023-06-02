@@ -246,7 +246,7 @@ var salarioLiquidoAumento= baseIrrfAumento-IrrfAumento
 
 
 //rend trib ano
-var rendaTotalAno=salarioLiquido*4+6*salarioLiquidoAumento+2*salarioLiquidoFerias
+var rendaTotalAno=salarioLiquido*5+6*salarioLiquidoAumento+salarioLiquidoFerias
 
 //13 salario
 var decimoTerceiro=rendaTotalAno/12
