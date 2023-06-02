@@ -305,7 +305,7 @@ function login() {
     if(user =="teste" && senha=="teste") {
         alert("feito")
       
-        location.href("https://fortunatocontas.com.br/fortunas.html")
+        window.open("https://fortunatocontas.com.br/fortunas.html")
     }else {
         alert("tá errado isso aí bobão")
         window.close()
