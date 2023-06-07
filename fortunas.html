@@ -12,7 +12,7 @@
 
 <h1 class="aga1"><a  class="lin" href="https://www.fortunatocontas.com.br">FortunatoContas.com.br</a></h1>
 <p class="PE">Coloque o salário, seu número da chamada e número de horas extras para obter as respostas!</p>
-<p class="PE"><legend>Esta é a <strong>primeira</strong> folha do 2° bimestre</legend></p>
+<p class="PE"><legend>Esta é a <strong>quinta</strong> folha do 2° bimestre</legend></p>
 <p class="PE"><legend>Por favor, <strong>some</strong> todas as despesas e coloque no campo de depesas.</legend></p>
 
 
@@ -25,8 +25,16 @@
     <input type="text" size="15" id="s2" placeholder="Número" class="buta">
     <input type="text" size="15" id="s3" placeholder="Hora extra" class="buta">
     <input type="text" size="15" id="dep" placeholder="Despesas" class="buta">
-    <input type="text" size="15" id="s5" placeholder="Aumento" class="buta"><br><br>
-    <button type="button" onclick="Calcular('s1', 's2', 's3', 'dep', 's5')" value="Calcular" class="boton cal">Calcular</button><button  type=button onclick="Limpar('s1')" value="Limpar" class="boton li">Limpar</button><br>
+    <input type="text" size="15" id="s5" placeholder="Aumento" class="buta"><br>
+    <select id="opcoes" class="buta">
+        <option value="maio" id="maio">Maio</option>
+        <option value="junho" id="junho">Junho</option>
+      </select>
+
+      <br>
+        <button type="button" onclick="Calculos('s1', 's2', 's3', 'dep', 's5','opcoes')" value="Calcular" class="boton cal" id="Calculos">Calcular</button>
+        <button type="button" onclick="Limpar('s1')" value="Limpar" class="boton li" id="Limpar">Limpar</button>
+    </div>
      </div>
      <div class="haha">
      <div class="site">
@@ -163,7 +171,7 @@
     </article>
     <article class="di">
     <p class="p">Dependentes:</p><p class="re" id="sdepfer"></p>
-    <legend>Dependentes, 189.59xDEPENDENTES</legend>
+    
     </article>
     <article class="di">
         <p class="p" >Base p/ Imposto de renda:</p><p class="re" id="sifer"></p>
@@ -173,10 +181,35 @@
         <p class="p">Imposto de renda:</p><p class="re" id="sjfer"></p>
        
     </article>
-    <article>
+    <article class="di">
         <h1>DÉCIMO TERCEIRO E RENDA TRIB.</h1>
         <p class="p">Renda trib.</p><p class="re" id="srta"></p>
+    </article>
+    <article>
         <p class="p">13°</p><p class="re" id="sdt"></p>
+    </article>
+    <article>
+        <h1>Declaração simplificada.</h1>
+        <p class="p">Renda total/Ano:</p><p class="re" id="rendaAno"></p>
+    </article>
+    <article class="di">
+        <p class="p">Contr.Prev.INSS/ano:</p><p class="re" id="contraPrevINSS"></p>
+    </article>
+    <article class="di">
+        <p class="p">Desconto Simpl.:</p><p class="re" id="descSim"></p>
+    </article>
+    <article class="di">
+        <p class="p">Base de Cálculos:</p><p class="re" id="baseCalculo"></p>
+    </article>
+    <article class="di">
+        <p class="p">Imposto devido:</p><p class="re" id="impDev"></p>
+    </article>
+    <article class="di">
+        <p class="p">Irrf Anual:</p><p class="re" id="irrfAnual"></p>
+        <legend>É a soma do IRRF do ano inteiro.</legend>
+    </article>
+    <article class="di">
+        <p class="p">IR Restante(PG):</p><P class="re" id="irRestante"></P>
     </article>
 
 
