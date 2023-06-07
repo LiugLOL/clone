@@ -1,4 +1,39 @@
 
+
+function IrrfAno(descSim, baseCalculo){
+        
+    if (baseCalculo<=22847.76) {
+       var descSim = 0
+       return descSim
+           
+    }
+    else if (baseCalculo<=33191.80) {
+
+        var descSim = baseCalculo*0.075-1716;
+        return descSim
+    
+    
+    }
+    else if (baseCalculo<=45012.60) {
+       var descSim = baseCalculo*0.15 -4257.57
+       return descSim
+    }
+    else if (baseCalculo<=55976.16) {
+   
+        var descSim = baseCalculo*0.225-7633.51
+        return descSim
+    }
+    else if (baseCalculo>55976.16) {
+   
+       var descSim = baseCalculo*0.275- 10432.32
+       return descSim
+    }
+
+         
+   }
+
+
+
 function calculoIRRF(irrfValor) {
     if (irrfValor <= 1903.98) {
         var resultadoIrrf = 0
@@ -27,12 +62,13 @@ function calculoIRRF(irrfValor) {
     }
     
 }
-function Calcular() {
-    var s1 = parseFloat(document.getElementById("s1").value); 
-    var s2 = parseFloat(document.getElementById("s2").value);
-    var s3 = parseFloat(document.getElementById("s3").value);
-    var s4 = parseFloat(document.getElementById("dep").value);
-    var s5 = parseFloat(document.getElementById("s5").value);
+function Calculos() {
+var s1 = parseFloat(document.getElementById("s1").value); 
+var s2 = parseFloat(document.getElementById("s2").value);
+var s3 = parseFloat(document.getElementById("s3").value);
+var s4 = parseFloat(document.getElementById("dep").value);
+var s5 = parseFloat(document.getElementById("s5").value);
+
     var aumento = s5/100;
 
     
@@ -54,49 +90,10 @@ function Calcular() {
     var dependentets = s4//USE VALORES INTEIRROS
     var baseIrrf = salarioBruto-inss-s4//base pro imposto de renda
     var irrf = calculoIRRF(baseIrrf) //imposto de renda
+    var salarioL = salarioBruto-irrf
+
   
-    /*var K = I - J; //salário líquido
     
-    var L =  I*12.33;
-    var M = H*12.33
-    var N = M*0.2;
-    if (N>=16754.34) {
-        N = 16754.34
-    }
-   
-    var O = L-N;//BASEIRA
-    var P =  0;//IMPDEV
-    
-
-         if (O<=22847.76) {
-       var P = 0
-           
-    }
-    else if (O<=33191.80) {
-        var parte1 = O*0.075;
-        var P = parte1-1716;
-        
-
-
-    }
-    else if (O<=45012.60) {
-        var parte1 = O*0.15;
-        var P = parte1-4257;
-
-       var P = O*0.15 -4257.57
-    }
-    else if (O<=55976.16) {
-        var parte1 = O*0.225
-        var P = parte1-7633.51
-       
-    }
-    else if (O>55976.16) {
-        var parte1= O*0.275
-       var P = O - 10432.32
-    }
-    var Q = J*12.33
-    var R = Q - P;*/
-   
 var salarioFix =  parseFloat(salario.toFixed(4));
 var horaNormalFix =  parseFloat(horaNormal.toFixed(4));
 var adicionalHoraExtraFix =  parseFloat(adicionalHExtra.toFixed(4));
@@ -128,7 +125,6 @@ var irrfFix =  parseFloat(irrf.toFixed(4));
       A
       
       1
-
       B
       I
       M
@@ -158,7 +154,7 @@ var irrfFix =  parseFloat(irrf.toFixed(4));
       var horaExtraMesAumento= horaExtraAumento*numeroExtrasAumento
       var salarioBrutoAumento=salarioAumento+horaExtraMesAumento
       var inssAumento=calculoINSS(salarioBrutoAumento)
-      var dependentesAumento = s4*189.59 //USE VALORES INTEIRROS
+      var dependentesAumento = s4 //USE VALORES INTEIRROS
       var baseIrrfAumento = salarioBrutoAumento-inss-s4//base pro imposto de renda
       var IrrfAumento = calculoIRRF(baseIrrfAumento);
 
@@ -185,7 +181,7 @@ var IrrfAumentoFix =  parseFloat(IrrfAumento.toFixed(4));
       var horaExtraMesFerias= HoraExtraFerias*numeroExtraMesFerias
       var salarioBrutoFerias=salarioFerias+horaExtraMesFerias
       var inssFerias= calculoINSS(salarioBrutoFerias)
-      var dependentesFerias = s4*189.59 //USE VALORES INTEIRROS
+      var dependentesFerias = s4 //USE VALORES INTEIRROS
       var baseIrrfFerias = salarioBrutoFerias-inss-s4//base pro imposto de renda
       var irrfFerias = calculoIRRF(baseIrrfFerias)
       var salarioLiquidoFerias=baseIrrfFerias-irrfFerias
@@ -194,8 +190,7 @@ var aafer =  parseFloat(salarioFerias.toFixed(4));
 var bbfer =  parseFloat(horaNormalFerias.toFixed(4));
 var ccfer =  parseFloat(adicionalHextraFerias.toFixed(4));
 var ddfer =  parseFloat(HoraExtraFerias.toFixed(4));
-var eefer =  parseFloat(numeroExtraMesFerias.toFixed(4));
-var fffer =  parseFloat(horaExtraMesFerias.toFixed(4));
+
 var ggfer =  parseFloat(salarioBrutoFerias.toFixed(4));
 var hhfer =  parseFloat(inssFerias.toFixed(4));
 var iifer =  parseFloat(baseIrrfFerias.toFixed(4));
@@ -246,22 +241,48 @@ var salarioLiquidoAumento= baseIrrfAumento-IrrfAumento
 
 
 //rend trib ano
-var rendaTotalAno=salarioLiquido*5+6*salarioLiquidoAumento+salarioLiquidoFerias
+var rendaTotalAno=salarioLiquido*4+6*salarioLiquidoAumento+2*salarioLiquidoFerias
 
 //13 salario
 var decimoTerceiro=rendaTotalAno/12
 
 document.getElementById('srta').innerHTML= rendaTotalAno;
 document.getElementById('sdt').innerHTML= decimoTerceiro;
-      
-      
-  }
-      
+//declaração simpl
+
+
+
+var rendaAno = calculoAno(salario, salarioAumento, salarioFerias);
+var contraPrevINSS = calculoAno(inss, inssAumento, inssFerias)
+    var descSim = contraPrevINSS*0.2
+    if(descSim>16754.34) {
+        var descSim = 16754.34
+        return descSim
+    }
+    var baseCalculo = rendaAno-descSim
+    
+
+var ImpDev =  baseCalculo-IrrfAno(descSim,baseCalculo);//IMPDEV
+
+var irrfAnual = calculoAno(irrf, IrrfAumento, irrfFerias);
+var IrRestante = ImpDev - baseCalculo;
+
+
+document.getElementById("rendaAno").innerHTML = rendaAno;
+document.getElementById("contraPrevINSS").innerHTML =contraPrevINSS ;
+document.getElementById("descSim").innerHTML = descSim;
+document.getElementById("baseCalculo").innerHTML = baseCalculo;
+document.getElementById("impDev").innerHTML = ImpDev;
+document.getElementById("irrfAnual").innerHTML = irrfAnual;
+document.getElementById("irRestante").innerHTML = IrRestante;
+}
+
+
     
     
     function Limpar(s1){
-		document.getElementById(s1).value = "";
-		
+        document.getElementById(s1).value = "";
+        
     }
   
   function fechar(){
@@ -305,10 +326,62 @@ function login() {
     if(user =="teste" && senha=="teste") {
         alert("feito")
       
-        window.open("https://fortunatocontas.com.br/fortunas.html")
+        location.href("https://fortunatocontas.com.br/fortunas.html")
     }else {
         alert("tá errado isso aí bobão")
         window.close()
     }
 
+}
+    function IrrfAno(impDev, baseCalculo){
+        
+     if (baseCalculo<=22847.76) {
+        var impDev = 0
+        return impDev
+            
+     }
+     else if (baseCalculo<=33191.80) {
+
+         var impDev = baseCalculo*0.075-1716;
+         return impDev
+     
+     
+     }
+     else if (baseCalculo<=45012.60) {
+        var impDev = baseCalculo*0.15 -4257.57
+        return impDev
+     }
+     else if (baseCalculo<=55976.16) {
+    
+         var impDev = baseCalculo*0.225-7633.51
+         return impDev
+     }
+     else if (baseCalculo>55976.16) {
+    
+        var impDev = baseCalculos*0.275- 10432.32
+        return impDev
+     }
+
+          
     }
+    function calculoAno(a, aAumento, aFerias) {
+        var selectElement = document.getElementById("opcoes");
+      
+        selectElement.addEventListener("change", function() {
+          var opcaoSelecionada = selectElement.value;
+      
+          if (opcaoSelecionada === "maio") {
+            var aumento = 4;
+            var aumentoNum = 7;
+            var result = a * aumento + aAumento * aumentoNum + aFerias;
+            return result
+            return a * aumento + aAumento * aumentoNum + aFerias;
+          } else if (opcaoSelecionada === "junho") {
+            var aumento = 5;
+            var aumentoNum = 6;
+            var result = a * aumento + aAumento * aumentoNum + aFerias;
+            return result
+          }
+        });
+      }
+      
