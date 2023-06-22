@@ -1,18 +1,298 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAÇA O LOGIN</title>
+    <title>contas financeiras</title>
+    <link rel="stylesheet" href="ces.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit">
 </head>
+
+
 <body>
-<div class="bang">
-    <h1>Faça o Login para acessar ao <a href="https://fortunatocontas.com.br">FortunatoContas.com.br</a></h1>
-    <script src="calculadorafc.js"></script>
-    <input type="text" placeholder="Usuário" id="v1" class="buta">
-    <input type="password" placeholder="Senha" id="v2"class="buta">
-    <input type="submit" onclick='login()'  placeholder="Login" class="buta">
-    
+    <h1 class="aga1"><a class="lin" href="https://www.fortunatocontas.com.br">FortunatoContas.com.br</a></h1>
+    <p class="PE">Coloque o salário, seu número da chamada e número de horas extras para obter as respostas!</p>
+    <p class="PE">
+        <legend>Esta é a <strong>quinta</strong> folha do 2° bimestre</legend>
+    </p>
+    <p class="PE">
+        <legend>Por favor, <strong>some</strong> todas as despesas e coloque no campo de depesas.</legend>
+    </p>
+
+    <div class="bang">
+        <input type="text" size="15" id="salarioHTML" placeholder="Salário" class="buta">
+        <input type="text" size="15" id="numeroHTML" placeholder="Número" class="buta">
+        <input type="text" size="15" id="horaExtraHTML" placeholder="Hora extra" class="buta">
+        <input type="text" size="15" id="despesasHTML" placeholder="Despesas" class="buta">
+        <input type="text" size="15" id="aumentoHTML" placeholder="Aumento" class="buta"><br>
+        <select id="opcoes" class="buta">
+            <option value="maio" id="maio">Maio</option>
+            <option value="junho" id="junho">Junho</option>
+        </select>
+
+        ><br>
+        <button type="button" onclick="Calculos('s1', 's2', 's3', 'dep', 's5')" value="Calcular"
+            class="boton cal">Calcular</button>
+        <button type="button" onclick="Limpar('s1')" value="Limpar" class="boton li">Limpar</button>
+    </div>
+    </div>
+    <div class="haha">
+        <div class="site">
+            <h1>Salário <strong>sem aumento</strong>.</h1>
+
+            <article class="di">
+                <p class="p">Salário</p>
+                <p id="salario" class="re"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Hora normal:</p>
+                <p class="re" id="horaNormal"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Adicional de 50%:</p>
+                <p class="re" id="adicionalHExtra"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Hora extra:</p>
+                <p class="re" id="horaExtra"></p>
+
+
+            </article>
+            <article class="di">
+                <p class="p">Horas extras:</p>
+                <p class="re" id="numeroExtra"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Total Horas Extras/mês:</p>
+                <p class="re" id="horaExtraMes"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Renda Trib.:</p>
+                <p class="re" id="salarioBruto"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Previência Of.:</p>
+                <p class="re" id="inss"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Despesas:</p>
+                <p class="re" id="dep"></p>
+            </article>
+            <article class="di">
+                <p class="p">Base p/ Imposto de renda:</p>
+                <p class="re" id="baseIrrf"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Imposto de renda:</p>
+                <p class="re" id="irrf"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Salário líquido:</p>
+                <p id="salarioLiquido" class="re"></p>
+            </article>
+            <!--Aumento-->
+            <br>
+            <h1>Salário <strong>aumento</strong>.</h1>
+            <article class="di">
+                <p class="p">Salário</p>
+                <p id="salarioAumento" class="re"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Hora normal:</p>
+                <p class="re" id="horaNormalAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Adicional de 50%:</p>
+                <p class="re" id="adicionalHExtraAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Hora extra:</p>
+                <p class="re" id="horaExtraAumento"></p>
+
+
+            </article>
+            <article class="di">
+                <p class="p">Horas extras:</p>
+                <p class="re" id="numeroExtraAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Total Horas Extras/mês:</p>
+                <p class="re" id="horaExtraMesAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Renda Trib.:</p>
+                <p class="re" id="salarioBrutoAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Previência Of.:</p>
+                <p class="re" id="inssAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Despesas:</p>
+                <p class="re" id="depAumento"></p>
+            </article>
+            <article class="di">
+                <p class="p">Base p/ Imposto de renda:</p>
+                <p class="re" id="baseIrrfAumento"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Imposto de renda:</p>
+                <p class="re" id="irrfAumento"></p>
+            </article>
+            <article class="di">
+                <p class="p">Salário líquido:</p>
+                <p class="re" id="salarioLiquidoAumento"></p>
+            </article>
+            <br>
+            <!--Férias-->
+            <h1><strong>FÉRIAS</strong></h1><BR>
+            <article class="di">
+                <p class="p">Salário</p>
+                <p id="salarioFerias" class="re"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Hora normal:</p>
+                <p class="re" id="horaNormalFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Adicional de 50%:</p>
+                <p class="re" id="adicionalHExtraFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p"> Hora extra:</p>
+                <p class="re" id="HoraExtraFerias"></p>
+
+
+            </article>
+            <article class="di">
+                <p class="p">Horas extras:</p>
+                <p class="re" id="numeroExtraFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Total Horas Extras/mês:</p>
+                <p class="re" id="horaExtraMesFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Renda Trib.:</p>
+                <p class="re" id="salarioBrutoFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Previência Of.:</p>
+                <p class="re" id="inssFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Despesas:</p>
+                <p class="re" id="despesasFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Base p/ Imposto de renda:</p>
+                <p class="re" id="baseIrrfFerias"></p>
+
+            </article>
+            <article class="di">
+                <p class="p">Imposto de renda:</p>
+                <p class="re" id="irrfFerias"></p>
+            </article>
+            <article class="di">
+                <p class="p">Salário líquido:</p>
+                <p class="re" id="salarioLiquidoFerias"></p>
+            </article>
+            <!--Declaração-->
+                <h1><strong>Declaração simplificada.</strong></h1>
+                <article class="di">
+                    <p class="p">Renda total/ano:</p>
+                    <p class="re" id="rendaAno"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Contr.Prev.INSS/ano:</p>
+                    <p class="re" id="contraPrevINSS"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Desconto Simpl.:</p>
+                    <p class="re" id="descSim"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Base de Cálculos:</p>
+                    <p class="re" id="baseCalculo"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Imposto devido:</p>
+                    <p class="re" id="impDev"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Irrf Anual:</p>
+                    <p class="re" id="irrfAnual"></p>
+                </article>
+                <article class="di">
+                    <p class="p">IR Restante(PG):</p>
+                    <P class="re" id="irRestante"></P>
+                </article>
+            <!--Custos empresariais-->
+            <h1><strong>Custos empresariais</strong></h1>
+                <article class="di">
+                    <p class="p">INSS Patronal:</p>
+                    <p class="re" id="inssPatronal"></p>
+                </article>
+                <article class="di">
+                    <p class="p">FGTS:</p>
+                    <p class="re" id="fgts"></p>
+                </article>
+                <article class="di">
+                    <p class="p">Custo Empresa:</p>
+                    <p class="re" id="custoEmpresa"></p>
+                </article>
+            
+                <br><br>
+
+                <div class="haha">
+                    <h1 class="obs">OBSERVAÇÃO!</h1><br>
+                    <h4>Caso Imposto Devido dê <STROng>negativo</STROng>, o governo que te paga, e caso dê
+                        <strong>positivo</strong>, será vice-versa.
+                    </h4><br>
+                    <h4>Agora só teremos a folha da semana e a da última semana.</h4><br><br><br>
+
+
+
+                    <h4>dá uma ajudinha ae e faz um pix, é difícil fazer isso :emojichorando:</h4><br>
+                    <h5>pix:</h5><br>
+                    <h5>(67) 9 9833-1806</h5>
+                    <br><br>
+                </div><br><br>
+
+                <!--<p class="folhaa"><a href="tabela.html" target="_blank" class="tab">Tabelas com IRRF, INSS, APENAS MENSAIS</p></legend>
+-->
+                <br><br><br><br><br>
+
+
+
+                <script src="contas.js"></script>
 </body>
+
 </html>
