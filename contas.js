@@ -84,6 +84,17 @@ function IrrfAno(descSim, baseCalculo) {
     return descSim
 
 }
+function vales(salario) {
+    let valeTrans = salario*0.06
+    if(valeTrans>483.6) {
+        valeTrans = 483.6
+    }
+    valeRef = salario*0.2
+    if(valeRef>325) {
+         valeRef = 325
+    }
+    return {valeRef, valeTrans}
+}
 
 
 
@@ -105,13 +116,17 @@ function Calculos() {
     let horaNormal = salario / 220;
     let adicionalHExtra = horaNormal / 2;
     let horaExtra = horaNormal + adicionalHExtra;
-    let numeroExtra = horaExtraHTML + numeroHTML
+    let numeroExtra = horaExtraHTML
     let horaExtraMes = horaExtra * numeroExtra;
     let salarioBruto = salario + horaExtraMes;
     let inss = calculoINSS(salarioBruto);
     let baseIrrf = salarioBruto - inss - despesasHTML;
     let irrf = calculoIRRF(baseIrrf);
-    let salarioLiquido = baseIrrf - irrf
+        //Vale
+        let valesNormal = vales(salario)
+            let valeTransporte = valesNormal.valeTrans
+            let valeRefeicao = valesNormal.valeRef
+    let salarioLiquido = salario - inss - irrf - valeTransporte - valeRefeicao
     //Aumento.
     let aumento = aumentoHTML / 100;
     let salarioAumento = salario * aumento + salario;
@@ -125,7 +140,11 @@ function Calculos() {
     let despesasAumento = despesasHTML;
     let baseIrrfAumento = salarioBrutoAumento - inss - despesasHTML;
     let irrfAumento = calculoIRRF(baseIrrfAumento);
-    let salarioLiquidoAumento = baseIrrfAumento - irrfAumento;
+        //vale
+        let valesAumento = vales(salarioAumento)
+        let valeTransporteAumento = valesAumento.valeTrans
+        let valeRefeicaoAumento = valesAumento.valeRef
+    let salarioLiquidoAumento = salarioAumento - inssAumento - irrfAumento - valeTransporteAumento - valeRefeicaoAumento;
 
     //Férias.
     let salarioFerias = salarioAumento * 0.33 + salario;
@@ -139,7 +158,11 @@ function Calculos() {
     let despesasFerias = despesasHTML;
     let baseIrrfFerias = salarioBrutoFerias - inss - despesasHTML;
     let irrfFerias = calculoIRRF(baseIrrfFerias);
-    let salarioLiquidoFerias = baseIrrfFerias - irrfFerias;
+        //vale       
+        let valesFerias = vales(salarioFerias)
+        let valeTransporteFerias = valesFerias.valeTrans
+        let valeRefeicaoFerias = valesFerias.valeRef
+    let salarioLiquidoFerias = salarioFerias - inssFerias - irrfFerias - valeTransporteFerias - valeRefeicaoFerias;
 
 
 
@@ -156,10 +179,13 @@ function Calculos() {
     let IrRestante = ImpDev - baseCalculo;
 
 
+    
     //Custos empresariais
     let inssPatronal = salarioBruto * 0.278
     let fgts = salarioBruto * 0.08
-    let custoEmpresa = inssPatronal + fgts
+    let valeTransporteEmpresa = 483.6-valeTransporte
+    let valeRefeicaoEmpresa = 325-valeRefeicao
+    let custoEmpresa = inssPatronal + fgts + salario +valeTransporteEmpresa + valeRefeicaoEmpresa
 
 
 
@@ -176,6 +202,8 @@ function Calculos() {
     document.getElementById("dep").innerHTML = despesasHTML;
     document.getElementById("baseIrrf").innerHTML = baseIrrf;
     document.getElementById("irrf").innerHTML = irrf;
+    document.getElementById("valeTransporte").innerHTML = valeTransporte;
+    document.getElementById("valeRefeicao").innerHTML = valeRefeicao;
     document.getElementById("salarioLiquido").innerHTML = salarioLiquido;
     //Aumento.
     document.getElementById("salarioAumento").innerHTML = salarioAumento;
@@ -189,6 +217,8 @@ function Calculos() {
     document.getElementById("depAumento").innerHTML = despesasAumento;
     document.getElementById("baseIrrfAumento").innerHTML = baseIrrfAumento;
     document.getElementById("irrfAumento").innerHTML = irrfAumento;
+    document.getElementById("valeTransporteAumento").innerHTML = valeTransporteAumento;
+    document.getElementById("valeRefeicaoAumento").innerHTML = valeRefeicaoAumento;
     document.getElementById("salarioLiquidoAumento").innerHTML = salarioLiquidoAumento;
     //Férias.
     document.getElementById("salarioFerias").innerHTML = salarioFerias;
@@ -202,6 +232,8 @@ function Calculos() {
     document.getElementById("despesasFerias").innerHTML = despesasFerias
     document.getElementById("baseIrrfFerias").innerHTML = baseIrrfFerias;
     document.getElementById("irrfFerias").innerHTML = irrfFerias;
+    document.getElementById("valeTransporteFerias").innerHTML = valeTransporteFerias;
+    document.getElementById("valeRefeicaoFerias").innerHTML = valeRefeicaoFerias;
     document.getElementById("salarioLiquidoFerias").innerHTML = salarioLiquidoFerias;
     //Declaração simplificada.
     document.getElementById("rendaAno").innerHTML = rendaAno;
@@ -214,6 +246,8 @@ function Calculos() {
     //Custos empresariais
     document.getElementById("inssPatronal").innerHTML = inssPatronal;
     document.getElementById("fgts").innerHTML = fgts;
+    document.getElementById("valeTransporteEmpresa").innerHTML = valeTransporteEmpresa
+    document.getElementById("valeRefeicaoEmpresa").innerHTML = valeRefeicaoEmpresa
     document.getElementById("custoEmpresa").innerHTML = custoEmpresa;
 }
 
