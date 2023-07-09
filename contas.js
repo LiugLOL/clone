@@ -1,3 +1,6 @@
+document.querySelector("button.boton.cal").addEventListener("click", calculos);
+document.querySelector("button.boton.li").addEventListener("click", limpar);
+
 function calculoAno(normal, aumento, ferias) {
     let select = document.querySelector("#opcoes");
     let normalNum = 0;
