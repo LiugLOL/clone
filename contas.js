@@ -230,85 +230,70 @@ function calculos() {
 
     //Todos os document.getElementById().innerHTML = ;
     //Normal.
-    document.getElementById("salario").innerHTML = salario;
-    document.getElementById("horaNormal").innerHTML = horaNormal;
-    document.getElementById("adicionalHExtra").innerHTML = adicionalHExtra;
-    document.getElementById("horaExtra").innerHTML = horaExtra;
-    document.getElementById("numeroExtra").innerHTML = numeroExtra;
-    document.getElementById("horaExtraMes").innerHTML = horaExtraMes;
-    document.getElementById("salarioBruto").innerHTML = salarioBruto;
-    document.getElementById("inss").innerHTML = inss;
+    document.getElementById("salario").innerHTML = dadosNormal.salario;
+    document.getElementById("horaNormal").innerHTML = dadosNormal.horaNormal;
+    document.getElementById("adicionalHExtra").innerHTML = dadosNormal.adicionalHExtra;
+    document.getElementById("horaExtra").innerHTML = dadosNormal.horaExtra;
+    document.getElementById("numeroExtra").innerHTML = dadosNormal.numeroDeHorasExtras;
+    document.getElementById("horaExtraMes").innerHTML = dadosNormal.horaExtraMes;
+    document.getElementById("salarioBruto").innerHTML = dadosNormal.salarioBruto;
+    document.getElementById("inss").innerHTML = dadosNormal.inss;
     document.getElementById("dep").innerHTML = despesasHTML;
-    document.getElementById("baseIrrf").innerHTML = baseIrrf;
-    document.getElementById("irrf").innerHTML = irrf;
-    document.getElementById("valeTransporte").innerHTML = valeTransporte;
-    document.getElementById("valeRefeicao").innerHTML = valeRefeicao;
-    document.getElementById("salarioLiquido").innerHTML = salarioLiquido;
+    document.getElementById("baseIrrf").innerHTML = dadosNormal.baseIrrf;
+    document.getElementById("irrf").innerHTML = dadosNormal.irrf;
+    document.getElementById("valeTransporte").innerHTML = dadosNormal.valeTransporte;
+    document.getElementById("valeRefeicao").innerHTML = dadosNormal.valeRefeicao;
+    document.getElementById("salarioLiquido").innerHTML = dadosNormal.salarioLiquido;
     //Aumento.
-    document.getElementById("salarioAumento").innerHTML = salarioAumento;
-    document.getElementById("horaNormalAumento").innerHTML = horaNormalAumento;
-    document.getElementById("adicionalHExtraAumento").innerHTML =
-        adicionalHExtraAumento;
-    document.getElementById("horaExtraAumento").innerHTML = horaExtraAumento;
-    document.getElementById("numeroExtraAumento").innerHTML =
-        numeroExtraAumento;
-    document.getElementById("horaExtraMesAumento").innerHTML =
-        horaExtraMesAumento;
-    document.getElementById("salarioBrutoAumento").innerHTML =
-        salarioBrutoAumento;
-    document.getElementById("inssAumento").innerHTML = inssAumento;
-    document.getElementById("depAumento").innerHTML = despesasAumento;
-    document.getElementById("baseIrrfAumento").innerHTML = baseIrrfAumento;
-    document.getElementById("irrfAumento").innerHTML = irrfAumento;
-    document.getElementById("valeTransporteAumento").innerHTML =
-        valeTransporteAumento;
-    document.getElementById("valeRefeicaoAumento").innerHTML =
-        valeRefeicaoAumento;
-    document.getElementById("salarioLiquidoAumento").innerHTML =
-        salarioLiquidoAumento;
+    document.getElementById("salarioAumento").innerHTML = dadosAumento.salario;
+    document.getElementById("horaNormalAumento").innerHTML = dadosAumento.horaNormal;
+    document.getElementById("adicionalHExtraAumento").innerHTML = dadosAumento.adicionalHExtra;
+    document.getElementById("horaExtraAumento").innerHTML = dadosAumento.horaExtra;
+    document.getElementById("numeroExtraAumento").innerHTML = dadosAumento.numeroDeHorasExtras;
+    document.getElementById("horaExtraMesAumento").innerHTML = dadosAumento.horaExtraMes;
+    document.getElementById("salarioBrutoAumento").innerHTML = dadosAumento.salarioBruto;
+    document.getElementById("inssAumento").innerHTML = dadosAumento.inss;
+    document.getElementById("depAumento").innerHTML = despesasHTML;
+    document.getElementById("baseIrrfAumento").innerHTML = dadosAumento.baseIrrf;
+    document.getElementById("irrfAumento").innerHTML = dadosAumento.irrf;
+    document.getElementById("valeTransporteAumento").innerHTML = dadosAumento.valeTransporte;
+    document.getElementById("valeRefeicaoAumento").innerHTML = dadosAumento.valeRefeicao;
+    document.getElementById("salarioLiquidoAumento").innerHTML = dadosAumento.salarioLiquido;
     //Férias.
-    document.getElementById("salarioFerias").innerHTML = salarioFerias;
-    document.getElementById("horaNormalFerias").innerHTML = horaNormalFerias;
-    document.getElementById("adicionalHExtraFerias").innerHTML =
-        adicionalHExtraFerias;
-    document.getElementById("HoraExtraFerias").innerHTML = HoraExtraFerias;
-    document.getElementById("numeroExtraFerias").innerHTML = numeroExtraFerias;
-    document.getElementById("horaExtraMesFerias").innerHTML =
-        horaExtraMesFerias;
-    document.getElementById("salarioBrutoFerias").innerHTML =
-        salarioBrutoFerias;
-    document.getElementById("inssFerias").innerHTML = inssFerias;
-    document.getElementById("despesasFerias").innerHTML = despesasFerias;
-    document.getElementById("baseIrrfFerias").innerHTML = baseIrrfFerias;
-    document.getElementById("irrfFerias").innerHTML = irrfFerias;
-    document.getElementById("valeTransporteFerias").innerHTML =
-        valeTransporteFerias;
-    document.getElementById("valeRefeicaoFerias").innerHTML =
-        valeRefeicaoFerias;
-    document.getElementById("salarioLiquidoFerias").innerHTML =
-        salarioLiquidoFerias;
+    document.getElementById("salarioFerias").innerHTML = dadosFerias.salario;
+    document.getElementById("horaNormalFerias").innerHTML = dadosAumento.horaNormal;
+    document.getElementById("adicionalHExtraFerias").innerHTML = dadosAumento.adicionalHExtra;
+    document.getElementById("HoraExtraFerias").innerHTML = dadosAumento.horaExtra;
+    document.getElementById("numeroExtraFerias").innerHTML = dadosAumento.numeroDeHorasExtras;
+    document.getElementById("horaExtraMesFerias").innerHTML = dadosAumento.horaExtraMes;
+    document.getElementById("salarioBrutoFerias").innerHTML = dadosFerias.salarioBruto;
+    document.getElementById("inssFerias").innerHTML = dadosFerias.inss;
+    document.getElementById("despesasFerias").innerHTML = despesasHTML;
+    document.getElementById("baseIrrfFerias").innerHTML = dadosFerias.baseIrrf;
+    document.getElementById("irrfFerias").innerHTML = dadosFerias.irrf;
+    document.getElementById("valeTransporteFerias").innerHTML = dadosFerias.valeTransporte;
+    document.getElementById("valeRefeicaoFerias").innerHTML = dadosFerias.valeRefeicao;
+    document.getElementById("salarioLiquidoFerias").innerHTML = dadosFerias.salarioLiquido;
     //Declaração simplificada.
     document.getElementById("rendaAno").innerHTML = rendaAno;
     document.getElementById("contraPrevINSS").innerHTML = contraPrevINSS;
     document.getElementById("descSim").innerHTML = descSim;
     document.getElementById("baseCalculo").innerHTML = baseCalculo;
-    document.getElementById("impDev").innerHTML = ImpDev;
+    document.getElementById("impDev").innerHTML = impDev;
     document.getElementById("irrfAnual").innerHTML = irrfAnual;
-    document.getElementById("irRestante").innerHTML = IrRestante;
+    document.getElementById("irRestante").innerHTML = irRestante;
     //Custos empresariais
     document.getElementById("inssPatronal").innerHTML = inssPatronal;
     document.getElementById("fgts").innerHTML = fgts;
-    document.getElementById("valeTransporteEmpresa").innerHTML =
-        valeTransporteEmpresa;
-    document.getElementById("valeRefeicaoEmpresa").innerHTML =
-        valeRefeicaoEmpresa;
+    document.getElementById("valeTransporteEmpresa").innerHTML = valeTransporteEmpresa;
+    document.getElementById("valeRefeicaoEmpresa").innerHTML = valeRefeicaoEmpresa;
     document.getElementById("custoEmpresa").innerHTML = custoEmpresa;
 }
 
-function Limpar() {
+function limpar() {
     document.getElementById("salarioHTML").value = "";
 }
 
-function fechar() {
-    window.close();
+function arredondar(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
 }
