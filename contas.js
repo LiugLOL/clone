@@ -194,56 +194,39 @@ function calculos() {
         valeTransporteAumento -
         valeRefeicaoAumento;
 
-    //Férias.
-    let salarioFerias = salarioAumento * 0.33 + salario;
-    let horaNormalFerias = salarioFerias / 220;
-    let adicionalHExtraFerias = horaNormalFerias / 2;
-    let HoraExtraFerias = horaNormalFerias + adicionalHExtraFerias;
-    let numeroExtraFerias = numeroExtra;
-    let horaExtraMesFerias = HoraExtraFerias * numeroExtraFerias;
-    let salarioBrutoFerias = salarioFerias + horaExtraMesFerias;
-    let inssFerias = calculoINSS(salarioBrutoFerias);
-    let despesasFerias = despesasHTML;
-    let baseIrrfFerias = salarioBrutoFerias - inss - despesasHTML;
-    let irrfFerias = calculoIRRF(baseIrrfFerias);
-    //vale
-    let valesFerias = vales(salarioFerias);
-    let valeTransporteFerias = valesFerias.valeTrans;
-    let valeRefeicaoFerias = valesFerias.valeRef;
-    let salarioLiquidoFerias =
-        salarioFerias -
-        inssFerias -
-        irrfFerias -
-        valeTransporteFerias -
-        valeRefeicaoFerias;
+    const salario = salarioHTML + numeroHTML;
+    const dadosNormal = folha(salario, horaExtraHTML, despesasHTML);
 
-    //Declaração simplificada.
-    let rendaAno = calculoAno(
-        salarioBruto,
-        salarioBrutoAumento,
-        salarioBrutoFerias,
+    const aumentoPorcentagem = aumentoHTML / 100;
+    const salarioAumento = salario * aumentoPorcentagem + salario;
+    const dadosAumento = folha(salarioAumento, horaExtraHTML, despesasHTML);
+
+    const dadosFerias = folhaFerias(dadosAumento, despesasHTML);
+
+    const rendaAno = calculoAno(
+        dadosNormal.salarioBruto,
+        dadosAumento.salarioBruto,
+        dadosFerias.salarioBruto,
     );
-    let contraPrevINSS = calculoAno(inss, inssAumento, inssFerias);
-    let descSim = contraPrevINSS * 0.2;
-    if (descSim > 16754.34) {
-        descSim = 16754.34;
-    }
-    let baseCalculo = rendaAno - descSim;
-    let ImpDev = baseCalculo - IrrfAno(descSim, baseCalculo);
-    let irrfAnual = calculoAno(irrf, irrfAumento, irrfFerias);
-    let IrRestante = ImpDev - baseCalculo;
+
+    const contraPrevINSS = calculoAno(dadosNormal.inss, dadosAumento.inss, dadosFerias.inss);
+
+    const baseDescSimpl = rendaAno * 0.2;
+    const descSim = baseDescSimpl > 16_754.34 ? 16_754.34 : baseDescSimpl;
+
+    const baseCalculo = rendaAno - descSim;
+    const impDev = irrfAno(baseCalculo);
+    const irrfAnual = calculoAno(dadosNormal.irrf, dadosAumento.irrf, dadosFerias.irrf);
+    const irRestante = impDev - irrfAnual;
 
     //Custos empresariais
-    let inssPatronal = salarioBruto * 0.278;
-    let fgts = salarioBruto * 0.08;
-    let valeTransporteEmpresa = 483.6 - valeTransporte;
-    let valeRefeicaoEmpresa = 325 - valeRefeicao;
-    let custoEmpresa =
-        inssPatronal +
-        fgts +
-        salario +
-        valeTransporteEmpresa +
-        valeRefeicaoEmpresa;
+    const inssPatronal = dadosNormal.salarioBruto * 0.278;
+    const fgts = dadosNormal.salarioBruto * 0.08;
+    const valeTransporteEmpresa =
+        483.6 - valeTransporte <= 0 ? 0 : 483.6 - dadosNormal.valeTransporte;
+    const valeRefeicaoEmpresa = 325 - valeRefeicao <= 0 ? 0 : 325 - dadosNormal.valeRefeicao;
+    const custoEmpresa =
+        inssPatronal + fgts + salario + valeTransporteEmpresa + valeRefeicaoEmpresa;
 
     //Todos os document.getElementById().innerHTML = ;
     //Normal.
