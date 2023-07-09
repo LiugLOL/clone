@@ -2,7 +2,9 @@ document.querySelector("button.boton.cal").addEventListener("click", calculos);
 document.querySelector("button.boton.li").addEventListener("click", limpar);
 
 function calculoAno(normal, aumento, ferias) {
-    let select = document.querySelector("#opcoes");
+    const select = document.getElementById("opcoes");
+    const opcaoSelecionada = select.value;
+
     let normalNum = 0;
     let aumentoNum = 0;
     let opcaoSelecionada = select.value;
