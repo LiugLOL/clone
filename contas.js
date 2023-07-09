@@ -7,7 +7,7 @@ function calculoAno(normal, aumento, ferias) {
 
     let normalNum = 0;
     let aumentoNum = 0;
-    let opcaoSelecionada = select.value;
+
     if (opcaoSelecionada === "maio") {
         normalNum = 4;
         aumentoNum = 7;
