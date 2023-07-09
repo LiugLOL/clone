@@ -137,16 +137,12 @@ function folhaFerias(dadosMesAnterior, despesas) {
     };
 }
 
-function Calculos() {
-    let salarioHTML = parseFloat(document.getElementById("salarioHTML").value);
-    let numeroHTML = parseFloat(document.getElementById("numeroHTML").value);
-    let horaExtraHTML = parseFloat(
-        document.getElementById("horaExtraHTML").value,
-    );
-    let despesasHTML = parseFloat(
-        document.getElementById("despesasHTML").value,
-    );
-    let aumentoHTML = parseFloat(document.getElementById("aumentoHTML").value);
+function calculos() {
+    const salarioHTML = parseFloat(document.getElementById("salarioHTML").value);
+    const numeroHTML = parseFloat(document.getElementById("numeroHTML").value);
+    const horaExtraHTML = parseFloat(document.getElementById("horaExtraHTML").value);
+    const despesasHTML = parseFloat(document.getElementById("despesasHTML").value);
+    const aumentoHTML = parseFloat(document.getElementById("aumentoHTML").value);
 
     if (
         isNaN(salarioHTML) ||
