@@ -17,6 +17,9 @@ function calculoAno(normal, aumento, ferias) {
         aumentoNum = 6;
         conta = normal * normalNum + aumento * aumentoNum + ferias;
     }
+
+    const conta = normal * normalNum + aumento * aumentoNum + ferias;
+
     return conta;
 }
 function calculoIRRF(irrf) {
