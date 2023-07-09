@@ -11,17 +11,16 @@ function calculoAno(normal, aumento, ferias) {
     if (opcaoSelecionada === "maio") {
         normalNum = 4;
         aumentoNum = 7;
-        conta = normal * normalNum + aumento * aumentoNum + ferias;
     } else if (opcaoSelecionada === "junho") {
         normalNum = 5;
         aumentoNum = 6;
-        conta = normal * normalNum + aumento * aumentoNum + ferias;
     }
 
     const conta = normal * normalNum + aumento * aumentoNum + ferias;
 
     return conta;
 }
+
 function calculoIRRF(irrf) {
     let resultado;
 
@@ -33,8 +32,7 @@ function calculoIRRF(irrf) {
 
     return arredondar(resultado);
 }
-    return resultado;
-}
+
 function calculoINSS(salario) {
     let resultado;
 
@@ -57,20 +55,7 @@ function irrfAno(baseCalculo) {
 
     return arredondar(ir);
 }
-function IrrfAno(descSim, baseCalculo) {
-    if (baseCalculo <= 22847.76) {
-        descSim = 0;
-    } else if (baseCalculo <= 33191.8) {
-        descSim = baseCalculo * 0.075 - 1716;
-    } else if (baseCalculo <= 45012.6) {
-        descSim = baseCalculo * 0.15 - 4257.57;
-    } else if (baseCalculo <= 55976.16) {
-        descSim = baseCalculo * 0.225 - 7633.51;
-    } else if (baseCalculo > 55976.16) {
-        descSim = baseCalculo * 0.275 - 10432.32;
-    }
-    return descSim;
-}
+
 function vales(salario) {
     const baseValeTransporte = salario * 0.06;
     const valeTransporte = baseValeTransporte > 483.6 ? 483.6 : baseValeTransporte;
@@ -154,45 +139,6 @@ function calculos() {
         alert("Preencha os campos corretamente!");
         return;
     }
-    //Normal.
-    let salario = salarioHTML + numeroHTML;
-    let horaNormal = salario / 220;
-    let adicionalHExtra = horaNormal / 2;
-    let horaExtra = horaNormal + adicionalHExtra;
-    let numeroExtra = horaExtraHTML;
-    let horaExtraMes = horaExtra * numeroExtra;
-    let salarioBruto = salario + horaExtraMes;
-    let inss = calculoINSS(salarioBruto);
-    let baseIrrf = salarioBruto - inss - despesasHTML;
-    let irrf = calculoIRRF(baseIrrf);
-    //Vale
-    let valesNormal = vales(salario);
-    let valeTransporte = valesNormal.valeTrans;
-    let valeRefeicao = valesNormal.valeRef;
-    let salarioLiquido = salario - inss - irrf - valeTransporte - valeRefeicao;
-    //Aumento.
-    let aumento = aumentoHTML / 100;
-    let salarioAumento = salario * aumento + salario;
-    let horaNormalAumento = salarioAumento / 220;
-    let adicionalHExtraAumento = horaNormalAumento / 2;
-    let horaExtraAumento = horaNormalAumento + adicionalHExtraAumento;
-    let numeroExtraAumento = numeroExtra;
-    let horaExtraMesAumento = horaExtraAumento * numeroExtraAumento;
-    let salarioBrutoAumento = salarioAumento + horaExtraMesAumento;
-    let inssAumento = calculoINSS(salarioBrutoAumento);
-    let despesasAumento = despesasHTML;
-    let baseIrrfAumento = salarioBrutoAumento - inss - despesasHTML;
-    let irrfAumento = calculoIRRF(baseIrrfAumento);
-    //vale
-    let valesAumento = vales(salarioAumento);
-    let valeTransporteAumento = valesAumento.valeTrans;
-    let valeRefeicaoAumento = valesAumento.valeRef;
-    let salarioLiquidoAumento =
-        salarioAumento -
-        inssAumento -
-        irrfAumento -
-        valeTransporteAumento -
-        valeRefeicaoAumento;
 
     const salario = salarioHTML + numeroHTML;
     const dadosNormal = folha(salario, horaExtraHTML, despesasHTML);
