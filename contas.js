@@ -23,32 +23,39 @@ function calculoAno(normal, aumento, ferias) {
     return conta;
 }
 function calculoIRRF(irrf) {
-    if (irrf < 2112) {
-        resultado = 0;
-    } else if (irrf < 2826.65) {
-        resultado = irrf * 0.075 - 142.8;
-    } else if (irrf < 3751.05) {
-        resultado = irrf * 0.15 - 354.8;
-    } else if (irrf < 4664.68) {
-        resultado = irrf * 0.225 - 646.13;
-    } else if (irrf > 4664.48) {
-        resultado = irrf * 0.275 - 869.36;
-    }
+    let resultado;
+
+    if (irrf < 2112) resultado = 0;
+    else if (irrf < 2826.65) resultado = irrf * 0.075 - 142.8;
+    else if (irrf < 3751.05) resultado = irrf * 0.15 - 354.8;
+    else if (irrf < 4664.68) resultado = irrf * 0.225 - 646.13;
+    else if (irrf > 4664.48) resultado = irrf * 0.275 - 869.36;
+
+    return arredondar(resultado);
+}
     return resultado;
 }
 function calculoINSS(salario) {
-    if (salario < 1320) {
-        resultado = salario * 0.075 + 99;
-    } else if (salario < 2571.29) {
-        resultado = (salario - 1320) * 0.09 + 112.62;
-    } else if (salario < 3856.94) {
-        resultado = (salario - 2571.29) * 0.12 + 154.28;
-    } else if (salario < 7507.49) {
-        resultado = (salario - 3856.94) * 0.14 + 511.08;
-    } else if (salario > 7507.49) {
-        resultado = 876.97;
-    }
-    return resultado;
+    let resultado;
+
+    if (salario < 1320) resultado = salario * 0.075 + 99;
+    else if (salario < 2571.29) resultado = (salario - 1320) * 0.09 + 112.62;
+    else if (salario < 3856.94) resultado = (salario - 2571.29) * 0.12 + 154.28;
+    else if (salario < 7507.49) resultado = (salario - 3856.94) * 0.14 + 511.08;
+    else if (salario > 7507.49) resultado = 876.97;
+
+    return arredondar(resultado);
+}
+function irrfAno(baseCalculo) {
+    let ir;
+
+    if (baseCalculo <= 22847.76) ir = 0;
+    else if (baseCalculo <= 33191.8) ir = baseCalculo * 0.075 - 1716;
+    else if (baseCalculo <= 45012.6) ir = baseCalculo * 0.15 - 4257.57;
+    else if (baseCalculo <= 55976.16) ir = baseCalculo * 0.225 - 7633.51;
+    else if (baseCalculo > 55976.16) ir = baseCalculo * 0.275 - 10432.32;
+
+    return arredondar(ir);
 }
 function IrrfAno(descSim, baseCalculo) {
     if (baseCalculo <= 22847.76) {
