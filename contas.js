@@ -80,11 +80,61 @@ function vales(salario) {
 
     return { valeRefeicao, valeTransporte };
 }
-    valeRef = salario * 0.2;
-    if (valeRef > 325) {
-        valeRef = 325;
-    }
-    return { valeRef, valeTrans };
+
+function folha(salario, horasExtras, despesas) {
+    const horaNormal = salario / 220;
+    const adicionalHExtra = horaNormal / 2;
+    const horaExtra = horaNormal + adicionalHExtra;
+    const numeroExtra = horasExtras;
+    const horaExtraMes = horaExtra * numeroExtra;
+    const salarioBruto = salario + horaExtraMes;
+    const inss = calculoINSS(salarioBruto);
+    const baseIrrf = salarioBruto - inss - despesas;
+    const irrf = calculoIRRF(baseIrrf);
+
+    const { valeTransporte, valeRefeicao } = vales(salario);
+
+    const salarioLiquido = salario - inss - irrf - valeTransporte - valeRefeicao;
+
+    return {
+        salario: arredondar(salario),
+        horaNormal: arredondar(horaNormal),
+        adicionalHExtra: arredondar(adicionalHExtra),
+        horaExtra: arredondar(horaExtra),
+        numeroDeHorasExtras: arredondar(numeroExtra),
+        horaExtraMes: arredondar(horaExtraMes),
+        inss: arredondar(inss),
+        baseIrrf: arredondar(baseIrrf),
+        irrf: arredondar(irrf),
+        salarioLiquido: arredondar(salarioLiquido),
+        salarioBruto: arredondar(salarioBruto),
+        valeRefeicao: arredondar(valeRefeicao),
+        valeTransporte: arredondar(valeTransporte),
+    };
+}
+
+function folhaFerias(dadosMesAnterior, despesas) {
+    const salario = dadosMesAnterior.salario * (4 / 3);
+    const salarioBruto = salario + dadosMesAnterior.horaExtraMes;
+    const inss = calculoINSS(salarioBruto);
+    const baseIrrf = salarioBruto - inss - despesas;
+    const irrf = calculoIRRF(baseIrrf);
+
+    const { valeRefeicao, valeTransporte } = vales(salario);
+
+    const salarioLiquido = salario - inss - irrf - valeTransporte - valeRefeicao;
+
+    return {
+        salario: arredondar(salario),
+        horaExtraMes: arredondar(dadosMesAnterior.horaExtraMes),
+        inss: arredondar(inss),
+        baseIrrf: arredondar(baseIrrf),
+        irrf: arredondar(irrf),
+        salarioLiquido: arredondar(salarioLiquido),
+        salarioBruto: arredondar(salarioBruto),
+        valeRefeicao: arredondar(valeRefeicao),
+        valeTransporte: arredondar(valeTransporte),
+    };
 }
 
 function Calculos() {
