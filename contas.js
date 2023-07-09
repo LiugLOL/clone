@@ -72,10 +72,14 @@ function IrrfAno(descSim, baseCalculo) {
     return descSim;
 }
 function vales(salario) {
-    let valeTrans = salario * 0.06;
-    if (valeTrans > 483.6) {
-        valeTrans = 483.6;
-    }
+    const baseValeTransporte = salario * 0.06;
+    const valeTransporte = baseValeTransporte > 483.6 ? 483.6 : baseValeTransporte;
+
+    const baseValeRef = salario * 0.2;
+    const valeRefeicao = baseValeRef > 325 ? 325 : baseValeRef;
+
+    return { valeRefeicao, valeTransporte };
+}
     valeRef = salario * 0.2;
     if (valeRef > 325) {
         valeRef = 325;
