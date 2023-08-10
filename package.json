@@ -1,6 +1,6 @@
 {
   "name": "fortunatocontas",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "apenas as contas do fortunatocontas",
   "main": "index.js",
   "scripts": {
