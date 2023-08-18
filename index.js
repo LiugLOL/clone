@@ -53,7 +53,7 @@ function Calcular() {
      document.getElementById("despesasFixasDois").innerText = despesasFixas; 
      document.getElementById("custoTotal").innerText = arredondar(custoTotal); 
      document.getElementById("rendPoupMes").innerText = 0.5;
-     document.getElementById("OportCap").innerText = arredondar(oportCap);
+     document.getElementById("oportCap").innerText = arredondar(oportCap);
      document.getElementById("peqEcon").innerText = arredondar(pontoDeEquilibrioEcon);
      document.getElementById("recComPeq").innerText = arredondar(recComPeq);
  } 
