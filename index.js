@@ -45,7 +45,7 @@ function Calcular() {
      document.getElementById("margemDeContribuicao").innerText = arredondar(margemDeContribuicao); 
      document.getElementById("despesasFixas").innerText =despesasFixas; 
      document.getElementById("aluguel").innerText = aluguel; 
-     document.getElementById("depreciacao").innerText = 583.33; 
+     document.getElementById("depreciacao").innerText = 600.00; 
      document.getElementById("mei").innerText = 72.0; 
      document.getElementById("pontoDeEquilibrioQuantidade").innerText = arredondar(pontoDeEquilibrioQuantidade); 
      document.getElementById("receitaPontoDeEquilibrio").innerText = arredondar(receitaComPontoDeEquilibrio); 
