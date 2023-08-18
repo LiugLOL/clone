@@ -2,7 +2,7 @@ function Calcular() {
      //informações 
      const numeroHTML = parseFloat(document.getElementById("numeroHTML").value); 
   
-     const quantidadeCocos = 300 + numeroHTML; 
+     const quantidadeCocos = 320 + numeroHTML; 
   
      if (isNaN(numeroHTML)) { 
          alert("Preencha o campo corretamente!"); 
@@ -17,13 +17,13 @@ function Calcular() {
      const materiaPrima = 455 + numeroHTML; 
      const aluguel = 200 + numeroHTML; 
      //folha 
-     const receita = quantidadeCocos * 6; 
+     const receita = quantidadeCocos * 7; 
      const custosVariaveis = luz + agua + celular + combustivel + canudosEGuardanapos + materiaPrima; 
      const custosVariaveisUnitario = custosVariaveis / quantidadeCocos; 
-     const margemDeContribuicao = 6 - custosVariaveisUnitario; 
+     const margemDeContribuicao = 7 - custosVariaveisUnitario; 
      const despesasFixas = 672 + aluguel; 
      const pontoDeEquilibrioQuantidade = despesasFixas / margemDeContribuicao; 
-     const receitaComPontoDeEquilibrio = pontoDeEquilibrioQuantidade * 6; 
+     const receitaComPontoDeEquilibrio = pontoDeEquilibrioQuantidade * 7; 
      const custoVariaveisComPontoDeEquilibrio = pontoDeEquilibrioQuantidade * custosVariaveisUnitario; 
      const custoTotal = custoVariaveisComPontoDeEquilibrio + despesasFixas; 
      const oportCap = (53000 + numeroHTML) * 0.5
@@ -32,7 +32,7 @@ function Calcular() {
   
      //Todos os document.getElementById().innerHTML = ; 
      document.getElementById("quantidade").innerText = quantidadeCocos; 
-     document.getElementById("precoVenda").innerText = 6; 
+     document.getElementById("precoVenda").innerText = 7; 
      document.getElementById("receita").innerText = receita; 
      document.getElementById("custosVariaveis").innerText = custosVariaveis; 
      document.getElementById("luz").innerText = luz; 
