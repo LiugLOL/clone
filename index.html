@@ -1,153 +1,146 @@
-<!DOCTYPE html> 
- <html lang="pt-br"> 
-  
- <head> 
-     <meta charset="UTF-8"> 
-     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <title>Contas financeiras</title> 
-     <link rel="stylesheet" href="styles.css"> 
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit"> 
- </head> 
-  
-  
- <body> 
-     <script src="index.js"></script> 
-     <h1 class="aga1"><a class="lin" href="https://www.fortunatocontas.com.br">FortunatoContas.com.br</a></h1> 
-     <p class="PE">Coloque o seu número da chamada e veja a mágica!</p> 
-     <p class="PE"> 
-         <legend>Esta é a <strong>primeira</strong> folha do 3° bimestre</legend> 
-     </p> 
-  
-  
-     <div class="bang"> 
-  
-         <input type="text" size="15" id="numeroHTML" placeholder="Número" class="buta"> 
-             <br><br> 
-         <button type="button" value="Calcular" onclick="Calcular()" class="boton cal">Calcular</button> 
-             <br> 
-             <br> 
-     </div> 
-     </div> 
-     <div class="haha"> 
-         <div class="site"> 
-             <article> 
-                 <p class="p">Quantidade:</p> 
-                 <p class="re" id="quantidade"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Preço venda:</p> 
-                 <p class="re" id="precoVenda"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Receita:</p> 
-                 <p class="re" id="receita"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Custos variáveis:</p> 
-                 <p class="re" id="custosVariaveis"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Luz:</p> 
-                 <p class="re" id="luz"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Água:</p> 
-                 <p class="re" id="agua"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Celular:</p> 
-                 <p class="re" id="celular"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Combustível:</p> 
-                 <p class="re" id="combustivel"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Canudos e Guardanapos:</p> 
-                 <p class="re" id="canudosEGuardanapos"></p> 
-             </article> 
-             <article> 
-                 <p class="p">Matéria-prima:</p> 
-                 <p class="re" id="materiaPrima"></p>  
-            </article> 
-            <article> 
-             <p class="p">CV unitário:</p> 
-             <p class="re" id="custosVariaveisUnitario"></p> 
-            </article> 
-            <article> 
-             <p class="p">MC:</p> 
-             <p class="re" id="margemDeContribuicao"></p> 
-            </article> 
-            <article> 
-             <p class="p">Desp. Fixas:</p> 
-             <p class="re" id="despesasFixas"></p> 
-            </article> 
-            <article> 
-             <p class="p">Aluguel:</p> 
-             <p class="re" id="aluguel"></p> 
-            </article> 
-            <article> 
-             <p class="p">Depreciação:</p> 
-             <p class="re" id="depreciacao"></p> 
-            </article> 
-            <article> 
-             <p class="p">MEI:</p> 
-             <p class="re" id="mei"></p> 
-            </article> 
-            <article> 
-             <p class="p">PEq Qnt.:</p> 
-             <p class="re" id="pontoDeEquilibrioQuantidade"></p> 
-            </article> 
-            <article> 
-             <p class="p">Receita PEq:</p> 
-             <p class="re" id="receitaPontoDeEquilibrio"></p> 
-            </article> 
-            <article> 
-             <p class="p"> CV com PEq:</p> 
-             <p class="re" id="custoVariaveisComPontoDeEquilibrio"></p> 
-            </article> 
-            <article> 
-             <p class="p">CF com PEq:</p> 
-             <p class="re" id="despesasFixasDois"></p> 
-            </article> 
-            <article> 
-             <p class="p">Custo total:</p> 
-             <p class="re" id="custoTotal"></p> 
-            </article> 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contas financeiras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit">
+</head>
+
+
+<body>
+    <script src="index.js"></script>
+    <h1 class="aga1"><a class="lin" href="https://www.fortunatocontas.com.br">FortunatoContas.com.br</a></h1>
+    <p class="PE">Coloque o seu número da chamada e veja a mágica!</p>
+    <p class="PE">
+        <legend>Esta é a <strong>primeira</strong> folha do 3° bimestre</legend>
+    </p>
+ 
+
+    <div class="bang">
+
+        <input type="text" size="15" id="numeroHTML" placeholder="Número" class="buta">
+            <br><br>
+        <button type="button" value="Calcular" onclick="Calcular()" class="boton cal">Calcular</button>
+            <br>
+            <br>
+    </div>
+    </div>
+    <div class="haha">
+        <div class="site">
             <article>
-                <p class="p">Rend.Poup/mês</p>
-                <p class="re" id="rendPoupMes"></p>
+                <p class="p">Quantidade:</p>
+                <p class="re" id="quantidade"></p>
             </article>
             <article>
-                <p class="p">Oport.Cap:</p>
-                <p class="re" id="oportCap"></p>
+                <p class="p">Preço venda:</p>
+                <p class="re" id="precoVenda"></p>
             </article>
             <article>
-                <p class="p">PEq Econ:</p>
-                <p class="re" id="peqEcon"></p>
+                <p class="p">Receita:</p>
+                <p class="re" id="receita"></p>
             </article>
             <article>
-                <p class="p">Rec. Com PEq:</p>
-                <p class="re" id="recComPeq"></p>
-                
-             <br><br> 
-  
-  
-  
-  
-             <h4>dá uma ajudinha ae e faz um pix, é difícil fazer isso &#128557;</h4><br> 
-             <h5>pix:</h5><br> 
-             <h5>(67) 9 9833-1806</h5> 
-             <br><br> 
-         </div><br><br> 
-  
-  
-         <br><br><br><br><br> 
-  
-  
-  
-  
- </body> 
-  
- </html>
+                <p class="p">Custos variáveis:</p>
+                <p class="re" id="custosVariaveis"></p>
+            </article>
+            <article>
+                <p class="p">Luz:</p>
+                <p class="re" id="luz"></p>
+            </article>  
+            <article>
+                <p class="p">Água:</p>
+                <p class="re" id="agua"></p>
+            </article>
+            <article>
+                <p class="p">Celular:</p>
+                <p class="re" id="celular"></p>
+            </article>
+            <article>
+                <p class="p">Combustível:</p>
+                <p class="re" id="combustivel"></p>
+            </article>
+            <article>
+                <p class="p">Canudos e Guardanapos:</p>
+                <p class="re" id="canudosEGuardanapos"></p>
+            </article>
+            <article>
+                <p class="p">Matéria-prima:</p>
+                <p class="re" id="materiaPrima"></p> 
+           </article>
+           <article>
+            <p class="p">CV unitário:</p>
+            <p class="re" id="custosVariaveisUnitario"></p>
+           </article>
+           <article>
+            <p class="p">MC:</p>
+            <p class="re" id="margemDeContribuicao"></p>
+           </article>
+           <article>
+            <p class="p">Desp. Fixas:</p>
+            <p class="re" id="despesasFixas"></p>
+           </article>
+           <article>
+            <p class="p">Aluguel:</p>
+            <p class="re" id="aluguel"></p>
+           </article>
+           <article>
+            <p class="p">Depreciação:</p>
+            <p class="re" id="depreciacao"></p>
+           </article>
+           <article>
+            <p class="p">MEI:</p>
+            <p class="re" id="mei"></p>
+           </article>
+           <article>
+            <p class="p">PEq Qnt.:</p>
+            <p class="re" id="pontoDeEquilibrioQuantidade"></p>
+           </article>
+           <article>
+            <p class="p">Receita PEq:</p>
+            <p class="re" id="receitaPontoDeEquilibrio"></p>
+           </article> 
+           <article>
+            <p class="p">Rend. Poup/mês:</p>
+            <p class="re" id="rendPoupMes"></p>
+           </article>
+           <article>
+            <p class="p">Oport. Cap:</p>
+            <p class="re" id="oportCap"></p>
+           </article>
+           <article>
+            <p class="p">PEq. Econ:</p>
+            <p class="re" id="pontoDeEquilibrioEcon"></p>
+           </article>
+           <article>
+            <p class="p">Cust. Desemb.:</p>
+            <p class="re" id="custDesemb"></p>
+           </article>
+           <article>
+            <p class="p">PEq. Financ.</p>
+            <p class="re" id="peqFinanc"></p>
+           </article>
+            <br><br>
+
+
+
+
+            <h4>dá uma ajudinha ae e faz um pix, é difícil fazer isso &#128557;</h4><br>
+            <h5>pix:</h5><br>
+            <h5>(67) 9 9833-1806</h5>
+            <h6>nunca recebi</h6>
+            <br><br>
+        </div><br><br>
+
+
+        <br><br><br><br><br>
+
+
+
+        
+</body>
+
+</html>
